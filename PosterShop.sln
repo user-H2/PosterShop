@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PosterShop", "PosterShop\PosterShop.csproj", "{BDAF6959-0ECA-45FC-A191-152F9675B23F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{9B0DFC0A-08CD-4C78-AC71-69A2DA29B74B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BDAF6959-0ECA-45FC-A191-152F9675B23F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDAF6959-0ECA-45FC-A191-152F9675B23F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDAF6959-0ECA-45FC-A191-152F9675B23F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B0DFC0A-08CD-4C78-AC71-69A2DA29B74B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B0DFC0A-08CD-4C78-AC71-69A2DA29B74B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B0DFC0A-08CD-4C78-AC71-69A2DA29B74B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B0DFC0A-08CD-4C78-AC71-69A2DA29B74B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
