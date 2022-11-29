@@ -1,0 +1,63 @@
+﻿@model Model.EF.ProductCategory
+
+@{
+    ViewBag.Title = "Xóa bỏ";
+    Layout = "~/Areas/Admin/Views/Shared/_Layouts.cshtml";
+}
+
+<h3>Bạn có chắc muốn xóa đối tượng này?</h3>
+<div class="card shadow mb-4">
+    <div class="card-header py-3 bg-dark">
+        <h6 class="m-0 font-weight-bold text-gray-200">Thông tin phân loại</h6>
+    </div>
+    <div class="card-body">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ParentID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ParentID)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Status)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Status)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ShowOnHome)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ShowOnHome)
+            </dd>
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color row justify-content-between">
+                <div class="col-auto">
+                    <input type="submit" value="Xóa" class="btn btn-danger" />
+                </div>
+
+                <div class="col-auto">
+                    @Html.ActionLink("Quay lại", "Index", null, new { @class = "btn btn-secondary" })
+                </div>
+            </div>
+        }
+    </div>
+</div>

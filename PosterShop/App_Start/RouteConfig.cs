@@ -17,7 +17,7 @@ namespace PosterShop
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
-                namespaces: new string[] { "PosterShop.Areas.Admin.Controllers" }
+                namespaces: new string[] { "PosterShop.Controllers" }
             );
         }
     }

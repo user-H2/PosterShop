@@ -37,11 +37,32 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,29 +72,93 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dao\UserDao.cs" />
-    <Compile Include="EF\About.cs" />
-    <Compile Include="EF\Category.cs" />
-    <Compile Include="EF\Contact.cs" />
-    <Compile Include="EF\Content.cs" />
-    <Compile Include="EF\ContentTag.cs" />
-    <Compile Include="EF\Feedback.cs" />
-    <Compile Include="EF\Footer.cs" />
-    <Compile Include="EF\Menu.cs" />
-    <Compile Include="EF\MenuType.cs" />
-    <Compile Include="EF\PosterShopDbContext.cs" />
-    <Compile Include="EF\Product.cs" />
-    <Compile Include="EF\ProductCategory.cs" />
-    <Compile Include="EF\Slide.cs" />
-    <Compile Include="EF\sysdiagram.cs" />
-    <Compile Include="EF\SystemConfig.cs" />
-    <Compile Include="EF\Tag.cs" />
-    <Compile Include="EF\User.cs" />
+    <Compile Include="EF\About.cs">
+      <DependentUpon>PosterShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Category.cs">
+      <DependentUpon>PosterShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Contact.cs">
+      <DependentUpon>PosterShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Content.cs">
+      <DependentUpon>PosterShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ContentTag.cs">
+      <DependentUpon>PosterShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Feedback.cs">
+      <DependentUpon>PosterShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Footer.cs">
+      <DependentUpon>PosterShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Menu.cs">
+      <DependentUpon>PosterShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\MenuType.cs">
+      <DependentUpon>PosterShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\PosterShop.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PosterShop.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\PosterShop.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PosterShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\PosterShop.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PosterShop.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Product.cs">
+      <DependentUpon>PosterShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ProductCategory.cs">
+      <DependentUpon>PosterShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Slide.cs">
+      <DependentUpon>PosterShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\SystemConfig.cs">
+      <DependentUpon>PosterShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\Tag.cs">
+      <DependentUpon>PosterShop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\User.cs">
+      <DependentUpon>PosterShop.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="EF\PosterShop.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PosterShop.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EF\PosterShop.edmx.diagram">
+      <DependentUpon>PosterShop.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EF\PosterShop.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PosterShop.edmx</DependentUpon>
+      <LastGenOutput>PosterShop.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EF\PosterShop.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PosterShop.edmx</DependentUpon>
+      <LastGenOutput>PosterShop.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

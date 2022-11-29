@@ -1,16 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Model.EF;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace PosterShop.Controllers
 {
     public class HomeController : Controller
     {
+        private PosterShopDbContext db = new PosterShopDbContext();
+
         public ActionResult Index()
         {
             return View();
+        }
+
+        public PartialViewResult Menu_Vertical()
+        {
+            return PartialView(db.ProductCategories.Where(x => x.Status == true).ToList());
+        }
+
+        public ActionResult Category(int id)
+        {
+            return View(db.Products.Where(x => x.ProCatID == id).ToList());
         }
 
         public ActionResult About()

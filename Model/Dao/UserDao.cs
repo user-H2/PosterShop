@@ -18,13 +18,7 @@ namespace Model.Dao
         {
             db = new PosterShopDbContext();
         }
-
-        public long Insert(User entity)
-        {
-            db.Users.Add(entity);
-            db.SaveChanges();
-            return entity.ID;
-        }
+                
         public bool Login(string userName, string passWord)
         {
             var result = db.Users.Count(x => x.UserName == userName && x.Password == passWord);
@@ -52,30 +46,53 @@ namespace Model.Dao
             }
 
         }
-        public bool Update(User entity)
-        {
-            try
-            {
-                var user = db.Users.Find(entity.ID);
-                user.Name = entity.Name;
-                if (!string.IsNullOrEmpty(entity.Password))
-                {
-                    user.Password = entity.Password;
-                }
-                user.Address = entity.Address;
-                user.Email = entity.Email;
-                user.ModifiedBy = entity.ModifiedBy;
-                user.ModifiedDate = DateTime.Now;
-                db.SaveChanges();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                //logging
-                return false;
-            }
 
-        }
+        //public long Insert(User entity)
+        //{
+        //    db.Users.Add(entity);
+        //    db.SaveChanges();
+        //    return entity.ID;
+        //}
+
+        //public bool Update(User entity)
+        //{
+        //    try
+        //    {
+        //        var user = db.Users.Find(entity.ID);
+        //        user.Name = entity.Name;
+        //        if (!string.IsNullOrEmpty(entity.Password))
+        //        {
+        //            user.Password = entity.Password;
+        //        }
+        //        user.Address = entity.Address;
+        //        user.Email = entity.Email;
+        //        user.Phone = entity.Phone;
+        //        user.Status = entity.Status;
+        //        user.ModifiedBy = entity.ModifiedBy;
+        //        user.ModifiedDate = DateTime.Now;
+        //        db.SaveChanges();
+        //        return true;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return false;
+        //    }
+        //}
+
+        //public bool Delete(int id)
+        //{
+        //    try
+        //    {
+        //        var user = db.Users.Find(id);
+        //        db.Users.Remove(user);
+        //        db.SaveChanges();
+        //        return true;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return false;
+        //    }
+        //}
 
         //public IEnumerable<User> ListAllPaging(string searchString, int page, int pageSize)
         //{
@@ -169,22 +186,7 @@ namespace Model.Dao
         //    db.SaveChanges();
         //    return user.Status;
         //}
-        public bool Delete(int id)
-        {
-            try
-            {
-                var user = db.Users.Find(id);
-                db.Users.Remove(user);
-                db.SaveChanges();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-
-        }
-
+        
         public bool CheckUserName(string userName)
         {
             return db.Users.Count(x => x.UserName == userName) > 0;
