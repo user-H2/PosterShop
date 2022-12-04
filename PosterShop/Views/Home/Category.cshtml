@@ -1,9 +1,26 @@
 ﻿@model List<Model.EF.Product>
 @{
     ViewBag.Title = "Category";
-    Layout = "~/Views/Shared/_Layout_Shop.cshtml";
+    Layout = "~/Views/Shared/_Layout_Home.cshtml";
+    var category = (Model.EF.ProductCategory)ViewBag.ProductCategory;
+
 }
 
+<!-- Breadcrumb Start -->
+<div class="container-fluid">
+    <div class="row px-xl-5">
+        <div class="col-12">
+            <nav class="breadcrumb bg-light mb-30">
+                <a class="breadcrumb-item text-dark" href="#">Home</a>
+                <a class="breadcrumb-item text-dark" href="#">Shop</a>
+                <span class="breadcrumb-item active">@category.Name</span>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+
+<!-- Shop Start -->
 <div class="container-fluid">
     <div class="row px-xl-5">
         <!-- Shop Sidebar Start -->
@@ -160,14 +177,13 @@
                                 <div class="product-action">
                                     <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                                     <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                                    <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                                    <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                                    <a class="btn btn-outline-dark btn-square" href="/Home/ProductDetails/@item.ID"><i class="fa fa-search"></i></a>
                                 </div>
                             </div>
                             <div class="text-center py-4">
                                 <a class="h6 text-decoration-none text-truncate" href="">@item.Name</a>
                                 <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>@item.Price ₫</h5><h6 class="text-muted ml-2"><del>@item.PromotionPrice ₫</del></h6>
+                                    <h5>@Html.FormatValue(item.Price, "{0:N0}") ₫</h5><h6 class="text-muted ml-2"><del>@Html.FormatValue(item.PromotionPrice, "{0:N0}") ₫</del></h6>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-center mb-1">
                                     <small class="fa fa-star text-primary mr-1"></small>
@@ -198,3 +214,4 @@
         <!-- Shop Product End -->
     </div>
 </div>
+<!-- Shop End -->

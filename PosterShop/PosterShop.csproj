@@ -2204,6 +2204,7 @@
     <Content Include="Views\Home\Menu_Vertical.cshtml" />
     <Content Include="Views\Shared\_Layout_Shop.cshtml" />
     <Content Include="Views\Home\Category.cshtml" />
+    <Content Include="Views\Home\ProductDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
